@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Meu HTML</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            background: blue;
+        }
+
+        #cabecalho-um {
+            background: yellow;
+        }
+
+        .fundo-vermelho {
+            background: red;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            background-color: red;
+            height: 62px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 20px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+        </ul>
+    </nav>
+    <h1 id="cabecalho-um" class="fundo-vermelho borda-esquerda">Titulo</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur quas illum rerum perspiciatis nam
+        reprehenderit, dolorem, itaque eligendi unde harum aspernatur eaque iusto eos! Aperiam accusantium nihil tempora
+        voluptates odit.</p>
+
+    <h2 id="cabecalho-dois" class="fundo-vermelho">Dois</h1>
+        <p>Texto qualquer</p>
+
+        <dl>
+            <dt>Café</dt>
+            <dd>Bebida quente</dd>
+        </dl>
+</body>
+
+</html>

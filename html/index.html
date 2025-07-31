@@ -1,74 +1,75 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8" />
-    <title>Meu HTML</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
+        body {
+            font-family: sans-serif;
         }
 
-        p {
-            background: blue;
+        table {
+            border-collapse: collapse;
+            width: 100%;
         }
 
-        #cabecalho-um {
-            background: yellow;
+        table td, table th {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: left;
         }
 
-        .fundo-vermelho {
-            background: red;
+        table caption {
+            caption-side: bottom;
+            text-align: right;
+            font-style: italic;
+            font-size: 14px;
+            margin: 5px 0;
         }
 
-        nav {
-            display: flex;
-            align-items: center;
-            background-color: red;
-            height: 62px;
+        tfoot td, thead th {
+            background-color: #ddd;
         }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            padding: 20px;
-            display: block;
-            text-transform: uppercase;
-        }
-
-        nav a:hover {
-            background-color: rgba(0, 0, 0, 0.3);
-        }
-
-        nav ul {
-            display: flex;
-            list-style-type: none;
+        tfoot td {
+            font-style: italic;
         }
     </style>
 </head>
-
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Products</a></li>
-        </ul>
-    </nav>
-    <h1 id="cabecalho-um" class="fundo-vermelho borda-esquerda">Titulo</h1>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur quas illum rerum perspiciatis nam
-        reprehenderit, dolorem, itaque eligendi unde harum aspernatur eaque iusto eos! Aperiam accusantium nihil tempora
-        voluptates odit.</p>
-
-    <h2 id="cabecalho-dois" class="fundo-vermelho">Dois</h1>
-        <p>Texto qualquer</p>
-
-        <dl>
-            <dt>Café</dt>
-            <dd>Bebida quente</dd>
-        </dl>
+    <p>Lorem ipsum dolor sit</p>
+    <table>
+        <caption>Uma descrição para a tabela</caption>
+        <thead>
+            <tr>
+                <th>Titulo 1</th>
+                <th>Titulo 2</th>
+                <th>Titulo 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>            
+            <tr>
+                <td colspan="2">AQUI</td>
+                <td rowspan="2">Corpo 3</td>
+            </tr>            
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Corpo 1</td>
+                <td>Corpo 2</td>
+                <td>Corpo 3</td>
+            </tr>
+        </tfoot>
+    </table>
 </body>
-
 </html>
