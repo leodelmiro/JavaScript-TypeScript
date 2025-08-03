@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,67 +10,110 @@
             font-family: sans-serif;
         }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        table td, table th {
-            border: 1px solid #ccc;
-            padding: 5px;
-            text-align: left;
-        }
-
-        table caption {
-            caption-side: bottom;
-            text-align: right;
-            font-style: italic;
-            font-size: 14px;
-            margin: 5px 0;
-        }
-
-        tfoot td, thead th {
-            background-color: #ddd;
-        }
-
-        tfoot td {
-            font-style: italic;
+        label {
+            cursor: pointer;
+            display: block;
         }
     </style>
 </head>
+
 <body>
-    <p>Lorem ipsum dolor sit</p>
-    <table>
-        <caption>Uma descrição para a tabela</caption>
-        <thead>
-            <tr>
-                <th>Titulo 1</th>
-                <th>Titulo 2</th>
-                <th>Titulo 3</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Corpo 1</td>
-                <td>Corpo 2</td>
-                <td>Corpo 3</td>
-            </tr>            
-            <tr>
-                <td colspan="2">AQUI</td>
-                <td rowspan="2">Corpo 3</td>
-            </tr>            
-            <tr>
-                <td>Corpo 1</td>
-                <td>Corpo 2</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>Corpo 1</td>
-                <td>Corpo 2</td>
-                <td>Corpo 3</td>
-            </tr>
-        </tfoot>
-    </table>
+    <form action="#" method="get" target="_blank" autocomplete="off">
+        <p>O meu formulário</p>
+        <p>
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+        </p>
+        <p>
+            <label for="dev">Sou um dev</label>
+            <input type="checkbox" id="dev" name="dev" value="sim">
+            <label for="dev2">Sou um dev 2</label>
+            <input type="checkbox" id="dev2" name="dev2" value="sim">
+            <label for="dev3">Sou um dev 3</label>
+            <input type="checkbox" id="dev3" name="dev3" value="sim">
+        </p>
+        <p>
+            Gênero:<br>
+            <label for="feminino">feminino</label>
+            <input type="radio" id="feminino" name="genero" value="feminino">
+            <label for="masculino">masculino</label>
+            <input type="radio" id="masculino" name="genero" value="masculino">
+            <label for="outro_outra">outro ou outra</label>
+            <input type="radio" id="outro_outra" name="genero" value="outro_outra">
+        </p>
+
+        <p>
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date">
+        </p>
+
+        <p>
+            <label for="datetime">Datetime</label>
+            <input type="datetime-local" id="datetime" name="datetime">
+        </p>
+        <p>
+            <label for="time">Datetime</label>
+            <input type="time" id="time" name="time">
+        </p>
+        <p>
+            <label for="cor">Cor preferida:</label>
+            <input type="color" id="cor" name="cor">
+        </p>
+        <p>
+            <label for="email">Seu e-mail:</label>
+            <input type="email" id="email" name="email" placeholder="exemplo@email.com">
+        </p>
+        <p>
+            <label for="file">Sua foto:</label>
+            <input type="file" id="file" name="file" accept=".png,.svg,image/*" multiple>
+        </p>
+        <p>
+            <label for="number">Number:</label>
+            <input type="number" id="number" name="number" placeholder="Digite um Número" min="0" max="99" step="1">
+        </p>
+        <p>
+            <label for="password">Number:</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha">
+        </p>
+        <p>
+            <label for="range">Range:</label>
+            <input type="range" id="range" name="range" list="markers">
+
+            <datalist id="markers">
+                <option value="0"></option>
+                <option value="25"></option>
+                <option value="50"></option>
+                <option value="75"></option>
+                <option value="100"></option>
+            </datalist>
+        </p>
+        <p>
+            <label for="url">Sua url:</label>
+            <input type="url" id="url" name="url" placeholder="Url">
+        </p>
+        <p>
+            <label for="search">Sua busca:</label>
+            <input type="search" id="search" name="search" placeholder="Search">
+        </p>
+        <p>
+            <label for="select">Selecione algo:</label>
+            <select name="select" id="select">
+                <optgroup label="Teste">
+                    <option value="qualquer 1" selected>Label 1</option>
+                    <option value="qualquer 2" selected>Label 2</option>
+                </optgroup>
+
+            </select>
+        </p>
+        <p>
+            <label for="textarea">Sua busca:</label>
+            <textarea></textarea>
+        </p>
+        <p>
+            <button type="reset">Reset</button>
+            <button type="submit">Enviar</button>
+        </p>
+    </form>
 </body>
+
 </html>
