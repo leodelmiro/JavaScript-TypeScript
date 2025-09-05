@@ -67,3 +67,39 @@ a {
 p {
     margin-bottom: 3rem;
 }
+
+.responsive-table {
+    overflow: hidden;
+    overflow-x: auto;
+}
+
+caption {
+    color: var(--primary-color);
+}
+
+table {
+    min-height: 360px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption {
+    font-style: italic;
+    font-size: 1.6rem;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+table td,
+table th {
+    white-space: nowrap;
+    padding: 1rem;
+    text-align: left;
+    color: var(--primary-color);
+    border: 1px solid var(--light-gray-color);
+}
+
+tfoot td,
+thead th {
+    background: var(--light-gray-color);
+}
