@@ -17,12 +17,14 @@
 </head>
 
 <body>
+    <input type="checkbox" id="close-menu" class="close-menu" aria-label="Close menu" role="button">
+    <label for="close-menu" title="close menu" class="close-menu-label"></label>
     <aside class="menu white-bg">
         <div class="main-content menu-content">
             <h1><a href="#home">LOGO</a></h1>
 
             <nav>
-                <ul>
+                <ul onclick="getElementById('close-menu').checked = false;">
                     <li><a href="#intro">intro</a></li>
                     <li><a href="#grid-one">grid-one</a></li>
                     <li><a href="#gallery">gallery</a></li>
@@ -247,6 +249,7 @@
     <footer class="footer white-bg">
         <p><a href="nofollow" target="_blank" href="https://github.com/leodelmiro">Feito com <span class="heart">❤</span> por Leonardo Delmiro</a></p>
     </footer>
+    <a class="back-to-top" href="#">➤</a>
 </body>
 
 </html>
