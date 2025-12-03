@@ -1,5 +1,16 @@
-module.exports.middlewareGlobal = (req, res, next) => {
+exports.middlewareGlobal = (req, res, next) => {
     res.locals.umaVariabelLocal = 'Este é o valor da variável local'
     console.log(`Método: ${req.method} - URL: ${req.url}`);
+    next();
+}
+
+exports.checkCsrfError = (err, req, res, next) => {
+    if (err && err.code === 'EBADCSRFTOKEN') {
+        return res.render('404')
+    }
+}
+
+exports.csrfMiddleware = (req, res, next) => {
+    res.locals.csrfToken = req.csrfToken();
     next();
 }
