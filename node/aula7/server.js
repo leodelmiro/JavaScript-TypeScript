@@ -44,8 +44,8 @@ app.use(flash())
 app.set('views', path.resolve(__dirname, 'src', 'views'))
 app.set('view engine', 'ejs')
 
-
-app.use(routes)
+app.use(middlewareGlobal);
+app.use(routes);
 
 const PORT = process.env.PORT || 3000;
 app.on('pronto', () => {
