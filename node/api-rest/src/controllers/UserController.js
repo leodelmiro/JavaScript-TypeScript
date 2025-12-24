@@ -4,7 +4,8 @@ class UserController {
   async create(req, res) {
     try {
       const novoUser = await User.create(req.body)
-      return res.json(novoUser)
+      const { id, nome, email } = novoUser
+      return res.json({ id, nome, email })
     } catch (e) {
       return res.status(400).json({ errors: e.errors.map(err => err.message) })
     }
@@ -12,7 +13,7 @@ class UserController {
 
   async index(req, res) {
     try {
-      const users = await User.findAll()
+      const users = await User.findAll({ attributes: ['id', 'nome', 'email'] })
       return res.json(users)
     } catch (e) {
       console.log(e)
@@ -22,9 +23,10 @@ class UserController {
 
   async get(req, res) {
     try {
-      const { id } = req.params
-      const user = await User.findByPk(id)
-      return res.json(user)
+      const user = await User.findByPk(req.params.id)
+
+      const { id, nome, email } = user;
+      return res.json({ id, nome, email })
     } catch (e) {
       console.log(e)
       return res.status(404)
@@ -33,15 +35,7 @@ class UserController {
 
   async update(req, res) {
     try {
-      const { id } = req.params
-
-      if (!id) {
-        return res.status(400).json({
-          errors: ['ID não enviado.']
-        })
-      }
-
-      const user = await User.findByPk(id)
+      const user = await User.findByPk(req.userId)
 
       if (!user) {
         return res.status(400).json({
@@ -57,8 +51,9 @@ class UserController {
       }
 
       const usuarioAtualizado = await user.update(req.body)
+      const { id, nome, email } = usuarioAtualizado
 
-      return res.json(usuarioAtualizado)
+      return res.json({ id, nome, email })
     } catch (e) {
       console.log(e)
       if (e && e.errors) {
@@ -68,17 +63,9 @@ class UserController {
     }
   }
 
-    async delete(req, res) {
+  async delete(req, res) {
     try {
-      const { id } = req.params
-
-      if (!id) {
-        return res.status(400).json({
-          errors: ['ID não enviado.']
-        })
-      }
-
-      const user = await User.findByPk(id)
+      const user = await User.findByPk(req.userId)
 
       if (!user) {
         return res.status(400).json({
