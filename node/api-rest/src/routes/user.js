@@ -5,8 +5,9 @@ import loginRequired from '../middlewares/loginRequired'
 
 const router = new Router()
 
-router.get('/', loginRequired, userController.index)
-router.get('/:id', userController.get)
+// Não deveria existir
+// router.get('/', loginRequired, userController.index)
+// router.get('/:id', userController.get)
 
 router.post('/', userController.create)
 router.put('/', loginRequired, userController.update)
